@@ -26,10 +26,17 @@
   --make-pgen \
   --out ${WORKDIR}/1000G/all_phase31
   
-# Assign IDs to variants with missing IDs
+# Assign IDs to variants with missing marker IDs
 ./plink2 \
   --pfile ${WORKDIR}/1000G/all_phase31 \
   --set-missing-var-ids @:# \
+  --make-pgen \
+  --out ${WORKDIR}/1000G/all_phase31
+  
+# Remove duplicate marker IDs
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --rm-dup force-first \
   --make-pgen \
   --out ${WORKDIR}/1000G/all_phase31
   
