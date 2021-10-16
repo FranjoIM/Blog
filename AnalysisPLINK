@@ -1,0 +1,17 @@
+# Generate fst distance matrix
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --fst Population \
+  --out ${WORKDIR}/1000G/all_phase31
+  
+# Generate heterozygosity report 
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --fst Population \
+  --out ${WORKDIR}/1000G/all_phase31
+ 
+# Prune Variants
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --indep-pairwise 200 50 0.25 \
+  --out ${WORKDIR}/1000G/all_phase31
