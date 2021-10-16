@@ -26,6 +26,13 @@
   --make-pgen \
   --out ${WORKDIR}/1000G/all_phase31
   
+# Assign IDs to variants with missing IDs
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --set-missing-var-ids @:# \
+  --make-pgen \
+  --out ${WORKDIR}/1000G/all_phase31
+  
 # Generate missingness report
 ./plink2 \
   --pfile ${WORKDIR}/1000G/all_phase31 \
