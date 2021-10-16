@@ -40,6 +40,26 @@
   --make-pgen \
   --out ${WORKDIR}/1000G/all_phase31
   
+# Prune Variants
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --indep-pairwise 200 50 0.25 \
+  --out ${WORKDIR}/1000G/all_phase31
+  
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --exclude ${WORKDIR}/1000G/all_phase31.prune.out \
+  --make-pgen \
+  --out ${WORKDIR}/1000G/all_phase31
+  
+# Remove first degree individuals
+./plink2 \
+  --pfile ${WORKDIR}/1000G/all_phase31 \
+  --make-king \
+  --king-cutoff 0.177\
+  --make-pgen \
+  --out ${WORKDIR}/1000G/all_phase31
+  
 # Generate missingness report
 ./plink2 \
   --pfile ${WORKDIR}/1000G/all_phase31 \
