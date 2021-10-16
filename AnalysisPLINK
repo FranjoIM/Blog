@@ -1,12 +1,6 @@
-# Generate fst distance matrix
+# Generate fst, heterozygosity, and allele frequency reports
 ./plink2 \
   --pfile ${WORKDIR}/1000G/all_phase31 \
   --fst Population \
+  --freq \
   --out ${WORKDIR}/1000G/all_phase31
-  
-# Generate heterozygosity report 
-./plink2 \
-  --pfile ${WORKDIR}/1000G/all_phase31 \
-  --het \
-  --out ${WORKDIR}/1000G/all_phase31
- 
