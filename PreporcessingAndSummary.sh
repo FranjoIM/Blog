@@ -22,9 +22,10 @@
 ./plink2 \
   --pfile ${WORKDIR}/1000G/all_phase31 \
   --autosome \
+  --snps-only \
   --make-pgen \
   --out ${WORKDIR}/1000G/all_phase31
-
+  
 # Generate missingness report
 ./plink2 \
   --pfile ${WORKDIR}/1000G/all_phase31 \
